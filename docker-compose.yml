@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nginx:
+    container_name: abizeitung_nginx
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/www
+      - ./config/site.conf:/etc/nginx/conf.d/default.conf
+  php:
+    container_name: abizeitung_php
+    image: rubidiumdev/php-7.3-mysql
+    volumes:
+      - ./src:/www
+  db:
+    container_name: abizeitung_mariadb
+    image: mariadb:10.4.10
+    environment:
+      MYSQL_USER: abizeitung
+      MYSQL_PASSWORD: abizeitung
+      MYSQL_DATABASE: abizeitung
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
