@@ -1,11 +1,11 @@
 <?php
-	$pdo = new PDO('mysql:host=127.0.0.1;dbname=abizeitung', 'www-data', 'geheim');
+	$pdo = new PDO('mysql:host=abizeitung_mariadb;dbname=abizeitung', 'abizeitung', 'abizeitung');
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8"> 
-		<title><?php echo $title ?></title>
+		<title>AbizeitungsPortal - <?php echo $title ?></title>
 		<link rel="stylesheet" type="text/css" href="Templates/style.css">
 	</head>
 
@@ -18,6 +18,5 @@
 			</div>
 			
 			<div class="space"></div>
-
 				
 			<div class="container">

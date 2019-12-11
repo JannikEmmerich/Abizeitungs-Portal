@@ -1,5 +1,5 @@
 <?php
-	$pdo = new PDO('mysql:host=127.0.0.1;dbname=abizeitung', 'www-data', 'geheim');
+	$pdo = new PDO('mysql:host=abizeitung_mariadb;dbname=abizeitung', 'abizeitung', 'abizeitung');
 ?>
 <!DOCTYPE HTML>
 <html>

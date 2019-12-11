@@ -1,4 +1,4 @@
-<?php 	$title = 'AbizeitungsPortal - Index';
+<?php 	$title = 'Index';
 	include('Templates/header.inc.php'); ?>
 	
 	<div id="login">
