@@ -1,5 +1,11 @@
 <?php
-	$pdo = new PDO('mysql:host=abizeitung_mariadb;dbname=abizeitung', 'abizeitung', 'abizeitung');
+
+    if (!file_exists('/tmp/initiated')) {
+        include 'init.php';
+        fopen('/tmp/initiated', 'w');
+    }
+
+	$pdo = new PDO('mysql:host=db;dbname=abizeitung', 'abizeitung', 'abizeitung');
 ?>
 <!DOCTYPE HTML>
 <html>
