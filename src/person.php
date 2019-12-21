@@ -1,21 +1,27 @@
 <?php 	$title = 'Steckbrief';
 	include('Templates/header.inc.php'); ?>
 	
-
+		<?php 
+			if (isset($_GET['id'])){
+				$id=$_GET['id'];
+			}else{
+				die('Keine Benutzer-ID!');
+			}
+		?>
 			<div id="main">
 				<h2>Steckbrief</h2>
 				<?php
-					$statement = $pdo->prepare("SELECT answer1, answer2 FROM person WHERE SNr = 1");
-					$statement->execute();
+					$statement = $pdo->prepare("SELECT QUESTION1, QUESTION2 FROM PROFILES WHERE user = ?");
+					$statement->execute(array($id));
 					$n = $statement->fetch();
 					
-					if ( isset($n["answer1"]) ){
-						$frage1 = $n["answer1"];
+					if ( isset($n["QUESTION1"]) ){
+						$frage1 = $n["QUESTION1"];
 					} else {
 						$frage1 = '';
 					}
-					if ( isset($n["answer2"]) ){
-						$frage2 = $n["answer2"];
+					if ( isset($n["QUESTION2"]) ){
+						$frage2 = $n["QUESTION2"];
 					} else {
 						$frage2 = '';
 					}
@@ -31,6 +37,7 @@
 					<textarea type="text" maxlength="500" placeholder="Antwort" name="frage2" size="150" style="height: 100px; width: 100%"><?php echo $frage2; ?></textarea> <br/> <br/>
 					<button type="submit">Absenden</button>
 					<input type="hidden" name="type" value="steckbrief"/>
+					<input type="hidden" name="creator" value="<?php echo $id ?>"/>
 				</form>
 			</div>
 	

@@ -1,12 +1,4 @@
-<?php
-
-    if (!file_exists('/tmp/initiated')) {
-        include 'init.php';
-        fopen('/tmp/initiated', 'w');
-    }
-
-	$pdo = new PDO('mysql:host=db;dbname=abizeitung', 'abizeitung', 'abizeitung');
-?>
+<?php include('database_connect.inc.php') ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
