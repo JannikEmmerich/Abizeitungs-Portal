@@ -1,44 +1,65 @@
-<?php 	$title = 'Steckbrief';
-	include('Templates/header.inc.php'); ?>
-	
-		<?php 
-			if (isset($_GET['id'])){
-				$id=$_GET['id'];
-			}else{
-				die('Keine Benutzer-ID!');
-			}
-		?>
-			<div id="main">
-				<h2>Kommentare</h2>
-				<?php
-					$statement = $pdo->prepare("SELECT id, name FROM USERS");
-					$statement->execute();
-				?>
-				<p>
-					Hier könnt ihr Kommentare abgeben, die in der Abizeitung unter den Steckbriefen der anderen erscheinen. <br/>
-					Pro Person könnt ihr einen Kommentar abgeben.
-				</p>
-				<form method="POST" action="./save_data.php">
-					<label>Schüler*in: <br/>
-						<select name="student_id">
-							<?php
-								while($value = $statement->fetch() ){
-									echo '<option>';
-									echo '(' . $value['id'] . ') ' . $value['name'];
-									echo '</option>';
-								}
-							?>
-						</select>
-					</label><br/>
-					Dein Kommentar: <br/>
-					<textarea maxlength="100" placeholder="Kommentar" name="comment" style="height: 50px; width: 100%"></textarea>
-					<button type="submit">Absenden</button>
-					<input type="hidden" name="type" value="comment"/>
-					<input type="hidden" name="creator" value="<?php echo $id ?>"/>
-				</form>
-			</div>
-	
-	<?php include('Templates/navigation.inc.php'); ?>
-	
+<?php
+include "Templates/login.inc.php";
+?>
 
-<?php include('Templates/footer.inc.php'); ?>
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abizeitung - Kommentieren</title>
+</head>
+
+<body>
+
+<form>
+    Bitte gib den Namen der Person, dessen Steckbrief Du kommentieren möchtest, ein:
+    <input name="name" type="text">
+    <input type="submit">
+</form>
+
+<?php
+    if (array_key_exists("name", $_GET)) {
+        $ps = $mysqli->prepare("SELECT userid, question1, question2 FROM users, profiles WHERE userid = id AND username = ? ");
+        $ps->bind_param("s", $_GET['name']);
+        $ps->execute();
+        $result = $ps->get_result();
+
+        if (mysqli_num_fields($result) == 0) {
+            echo "Der Steckbrief von " . $_GET['name'] . " wurde nicht gefunden!";
+        } else {
+            $arr = $result->fetch_assoc();
+            echo "<h1>Steckbrief von " . $_GET['name'] . "</h1>";
+            echo "<p>Question1: " . $arr["question1"] . "</p>";
+            echo "<p>Question1: " . $arr["question2"] . "</p>";
+
+            echo    '<br><form action="save_comment.php" method="post">
+                        Kommentar abgeben: 
+                        <input name="comment" type="text">
+                        <input name="name" hidden="true" value=' . $_GET['name'] . '>
+                        <input type="submit">
+                    </form>';
+
+            $ps = $mysqli->prepare("SELECT comment from comments where userid = ?");
+            $ps->bind_param("s", $arr['userid']);
+            $ps->execute();
+            $result = $ps->get_result();
+
+            if (mysqli_num_fields($result) > 0) {
+                echo "<br><h2>Kommentare:</h2>";
+
+                while ($row = $result->fetch_assoc()) {
+                    echo "<p>" .  $row["comment"] . "</p>";
+                }
+            }
+        }
+    }
+?>
+
+<br>
+
+<a href="index.php">Zurück zum Hauptmenü</a>
+
+</body>
+
+</html>
