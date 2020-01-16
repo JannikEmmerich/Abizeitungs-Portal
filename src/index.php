@@ -1,18 +1,26 @@
-<?php 	$title = 'Index';
-	include('Templates/header.inc.php'); ?>
-	
-	<div id="login">
-		<h1>Willkommen auf dem AbizeitungsPortal!</h1>
-		<p>
-			Bitte meldet euch an, um fortzufaren:
-		</p>
-		<form method="POST" action="./login.php">
-			Eure Schüler-ID:
-			<input type="number" name="username">
-			Euer Passwort:
-			<input type="password" name="password">
-			<button type="submit">Login</button>
-		</form>
-	</div>
+<?php
+    include "Templates/login.inc.php";
+?>
 
-<?php include('Templates/footer.inc.php'); ?>
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abizeitung - Hauptmenü</title>
+</head>
+
+<body>
+<?php
+    echo '<h1>Willkommen, ' . $arr['username'] . '!</h1>';
+?>
+
+<a href="profile.php">Steckbrief bearbeiten</a>
+<br>
+<a href="upload.php">Bilder hochladen</a>
+<br>
+<a href="comment.php">Steckbrief kommentieren</a>
+
+</body>
+
+</html>
