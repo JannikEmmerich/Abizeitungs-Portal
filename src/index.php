@@ -17,6 +17,8 @@
 
 <a href="profile.php">Steckbrief bearbeiten</a>
 <br>
+<a href="upload.php">Bilder hochladen</a>
+<br>
 <a href="comment.php">Steckbrief kommentieren</a>
 
 </body>

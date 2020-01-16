@@ -25,8 +25,8 @@ include "Templates/login.inc.php";
         $ps->execute();
         $result = $ps->get_result();
 
-        if (mysqli_num_fields($result) == 0) {
-            echo "Der Steckbrief von " . $_GET['name'] . " wurde nicht gefunden!";
+        if (mysqli_num_rows($result) == 0) {
+            echo "<br>Der Steckbrief von " . $_GET['name'] . " wurde nicht gefunden!<br>";
         } else {
             $arr = $result->fetch_assoc();
             echo "<h1>Steckbrief von " . $_GET['name'] . "</h1>";

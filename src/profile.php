@@ -31,6 +31,9 @@ if(mysqli_num_fields($result) > 0) {
 
 ?>
 
+<p>Aktuelles Bild: <img alt="Du hast noch kein Bild hochgeladen!" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_current.png")); ?>'></p>
+<p>Altes Bild: <img alt="Du hast noch kein Bild hochgeladen!" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_old.png")); ?>'></p>
+
 <form action="save_profile.php" method="post">
     Question 1:
     <input name="question1" type="text" value="<?php echo $question1?>">
