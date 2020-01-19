@@ -13,6 +13,17 @@ $mysqli->query('CREATE TABLE IF NOT EXISTS comments (
 	)');
 $mysqli->query('CREATE TABLE IF NOT EXISTS profiles (
 	userid INT PRIMARY KEY UNIQUE,
-	question1 TEXT, 
-	question2 TEXT
+	birthdate DATE, 
+	livingplace TEXT,
+	question1 TEXT,
+	question2 TEXT,
+	question3 TEXT,
+	question4 TEXT,
+	question5 TEXT
+	)');
+$mysqli->query('CREATE TABLE IF NOT EXISTS surveys (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	userid INT,
+	survey_key TEXT, 
+	survey_value TEXT
 	)');

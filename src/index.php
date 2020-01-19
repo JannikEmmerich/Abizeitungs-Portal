@@ -20,6 +20,10 @@
 <a href="upload.php">Bilder hochladen</a>
 <br>
 <a href="comment.php">Steckbrief kommentieren</a>
+<br>
+<a href="surveys.php">Umfragen</a>
+<br>
+<a href="students.php">Alle Schüler anzeigen</a>
 
 </body>
 

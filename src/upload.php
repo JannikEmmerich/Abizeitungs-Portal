@@ -7,7 +7,7 @@ include "Templates/login.inc.php";
 
 <head>
     <meta charset="UTF-8">
-    <title>Abizeitung - Steckbriefe</title>
+    <title>Abizeitung - Bilderupload</title>
 </head>
 
 <body>
@@ -30,6 +30,10 @@ Altes Bild:
     <input type="file" name="old"><br>
     <input type="submit">
 </form>
+
+<br>
+
+<a href="index.php">Zurück zum Hauptmenü</a>
 
 </body>
 
