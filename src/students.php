@@ -1,34 +1,26 @@
 <?php
 include "Templates/login.inc.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Abizeitung - Umfragen</title>
-</head>
-
-<body>
-
-<p>Alle Schüler:</p>
-
 <?php
-$ps = $mysqli->prepare("SELECT * FROM users");
-$ps->execute();
-$result = $ps->get_result();
-
-while ($row = $result->fetch_assoc()) {
-    echo $row['username'];
-    echo "<br>";
-}
+	$title = "Alle Schüler";
+	include "Templates/header.inc.php";
 ?>
+<div id="main">
+	<h2>Alle Schüler:</h2>
+	<ol>
+<?php
+		$ps = $mysqli->prepare("SELECT * FROM users");
+		$ps->execute();
+		$result = $ps->get_result();
 
-<br>
-
-<a href="index.php">Zurück zum Hauptmenü</a>
-
-</body>
-
-</html>
+		while ($row = $result->fetch_assoc()) {
+			echo '<li>' . $row['username'] . '</li>' . "\n";
+		}
+	?>
+	</ol>
+</div>
+	
+<?php 
+	include('Templates/navigation.inc.php');  
+	include('Templates/footer.inc.php'); 
+?>

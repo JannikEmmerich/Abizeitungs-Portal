@@ -1,16 +1,11 @@
 <?php
 include "Templates/login.inc.php";
 ?>
-
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Abizeitung - Steckbriefe</title>
-</head>
-
-<body>
+<?php
+	$title = "Mein Steckbrief";
+	include "Templates/header.inc.php";
+?>
+	<div id="main">
 <?php
 echo '<h1>Steckbrief von ' . $arr['username'] . '</h1>';
 
@@ -41,8 +36,25 @@ if(mysqli_num_fields($result) > 0) {
 
 ?>
 
-<p>Aktuelles Bild: <br><img alt="Du hast noch kein Bild hochgeladen!" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_current.png")); ?>'></p>
-<p>Altes Bild: <br><img alt="Du hast noch kein Bild hochgeladen!" src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_old.png")); ?>'></p>
+<table style="border: 0px">
+	<colgroup>
+		<col width="50%"/>
+		<col width="50%"/>
+	</colgroup>
+	<tr><th>Aktuelles Bild:</th><th>Altes Bild:</th></tr>
+	<tr>
+		<td>
+			<img alt="Du hast noch kein aktuelles Bild hochgeladen!" width=400px src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_current.png")); ?>'>
+		</td>
+		<td>
+			<img alt="Du hast noch kein altes Bild hochgeladen!" width=400px src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_old.png")); ?>'>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><em>Du kannst die Bilder unter <a href="upload.php">diesem Link</a> ändern oder über die Navigation rechts</em></td>
+	</tr>
+</table>
+<br>
 
 <form action="save_profile.php" method="post">
     Geburtsdatum:
@@ -79,10 +91,10 @@ if(mysqli_num_fields($result) > 0) {
     <input type="submit">
 </form>
 
-<br>
+</div>
 
-<a href="index.php">Zurück zum Hauptmenü</a>
 
-</body>
-
-</html>
+<?php 
+	include('Templates/navigation.inc.php');  
+	include('Templates/footer.inc.php'); 
+?>
