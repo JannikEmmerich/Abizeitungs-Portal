@@ -12,9 +12,7 @@ include "Templates/login.inc.php";
 		<input name="name" type="text">
 		<input type="submit">
 	</form>
-
-	<?php
-	<?php
+<?php
 	if (array_key_exists("name", $_GET)) {
 		$ps = $mysqli->prepare("SELECT * FROM users WHERE username = ? ");
 		$ps->bind_param("s", $_GET['name']);

@@ -9,7 +9,6 @@
 <?php
     echo '<h1>Willkommen, ' . $arr['username'] . '!</h1>';
 ?>
-
 <?php 
 	include('Templates/navigation.inc.php');  
 	include('Templates/footer.inc.php'); 
