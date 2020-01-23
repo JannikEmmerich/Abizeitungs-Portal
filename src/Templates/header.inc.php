@@ -11,7 +11,7 @@
 			<a name="top"></a>
 			<div id="header">
 				<img name="logo"  alt="logo" src='data:image/jpg;base64,<?php echo base64_encode(file_get_contents("Images/logo.jpg")); ?>'>
-				<div id="title">Abiläum 2020 - Mit uns der Boom, danach die Krise</div>
+				<div id="title">Die Goldenen 20er - Mit uns der Boom, danach die Krise</div>
 			</div>
 			
 			<div class="space"></div>
