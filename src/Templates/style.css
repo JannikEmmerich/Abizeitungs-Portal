@@ -38,6 +38,7 @@ em { font-weight: bold; }
 #login { background-color: rgba( 255, 255, 255, 0.5); grid-row-start: 1; grid-row-end: span 1; grid-column-start: 1; grid-column-end: span 2; padding: 5em}
 
 #main { grid-row-start: 1; grid-row-end: span 1; grid-column-start: 1; grid-column-end: span 1}
+#display { margin: 5px; background-color: lightgrey; padding: 5px;}
 
 #navigation { grid-row-start: 1; grid-row-end: span 1; grid-column-start: 2; grid-column-end: span 1}
 #navigation #element {background: lightgrey; padding: 20px; margin: 2px; text-align: center}

@@ -36,7 +36,7 @@ if(mysqli_num_fields($result) > 0) {
 
 ?>
 
-<table style="border: 0px">
+<table style="border: 0px" cellpadding="5">
 	<colgroup>
 		<col width="50%"/>
 		<col width="50%"/>
