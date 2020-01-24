@@ -22,11 +22,11 @@ if (mysqli_num_rows($result) == 0) {
     header("Location: https://abizeitung.rubidium.ml/surveys.php?invalid_input=1");
 } else {
     $ps = $mysqli->prepare("DELETE FROM surveys where userid = ? and survey_key = ?");
-    $ps->bind_param("ss", $user, $survey);
+    $ps->bind_param("is", $user, $survey);
     $ps->execute();
 
     $ps = $mysqli->prepare("INSERT INTO surveys (userid, survey_key, survey_value) VALUES(?, ?, ?)");
-    $ps->bind_param("sss", $user, $survey, $value);
+    $ps->bind_param("iss", $user, $survey, $value);
     $ps->execute();
 
     header("Location: https://abizeitung.rubidium.ml/survey_results.php?survey_key=" . $survey);

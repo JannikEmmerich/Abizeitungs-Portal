@@ -21,7 +21,7 @@ include "Templates/login.inc.php";
 	<h3>Schülerumfragen:</h3>
 
 	<form action="save_umfragen.php" method="post">
-        <input type="hidden" value="student" name="type">
+		<input type="hidden" value="student" name="type">
 		<select name="survey">
 			<option>ärgschter Dialekt</option>
 			<option>Bundeskanzler</option>
@@ -112,7 +112,19 @@ include "Templates/login.inc.php";
 			<option>wird Influencer</option>
 			<option>Alleinunterhalter</option>
 		</select>
-		<input type="text" name="value">
+		<select name="value">
+		<?php
+			
+				$ps = $mysqli->prepare("SELECT * FROM users");
+				$ps->execute();
+				$result = $ps->get_result();
+				
+				while($row=$result->fetch_assoc()){
+					echo '<option>' . $row['username'] . '</option>';
+				}
+			
+		?>
+		</select>
 		<input type="submit">
 	</form>
 
@@ -121,7 +133,7 @@ include "Templates/login.inc.php";
 	<h3>Lehrerumfragen:</h3>
 
 	<form action="save_umfragen.php" method="post">
-        <input type="hidden" value="teacher" name="type">
+		<input type="hidden" value="teacher" name="type">
 		<select name="survey">
 			<option>würfelt Noten</option>
 			<option>mit...würde ich gerne auf Studienfahrt gehen</option>
@@ -192,7 +204,19 @@ include "Templates/login.inc.php";
 			<option>war/ist ein Frauenschwarm</option>
 			<option>war/ist ein Männerschwarm</option>
 		</select>
-		<input type="text" name="value">
+		<select name="value">
+		<?php
+			
+				$ps = $mysqli->prepare("SELECT * FROM teachers");
+				$ps->execute();
+				$result = $ps->get_result();
+				
+				while($row=$result->fetch_assoc()){
+					echo '<option>' . $row['username'] . '</option>';
+				}
+			
+		?>
+		</select>
 		<input type="submit">
 	</form>
 
