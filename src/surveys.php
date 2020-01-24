@@ -72,8 +72,6 @@ include "Templates/login.inc.php";
 			<option>perfekte Schwiegertochter</option>
 			<option>der neue Picasso</option>
 			<option>wird Professor</option>
-			<option>süßestes Schülerpärchen</option>
-			<option>potentielles Schülerpärchen</option>
 			<option>wildester Partygänger</option>
 			<option>landet auf dem roten Teppich</option>
 			<option>größte Rampensau</option>
@@ -253,8 +251,6 @@ include "Templates/login.inc.php";
             <option>perfekte Schwiegertochter</option>
             <option>der neue Picasso</option>
             <option>wird Professor</option>
-            <option>süßestes Schülerpärchen</option>
-            <option>potentielles Schülerpärchen</option>
             <option>wildester Partygänger</option>
             <option>landet auf dem roten Teppich</option>
             <option>größte Rampensau</option>
