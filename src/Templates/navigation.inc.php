@@ -1,10 +1,20 @@
-
 			<div id="navigation">
-				<div id="element"><a href="index.php">Hauptseite</a></div>
-				<div id="element"><a href="profile.php">Steckbrief bearbeiten</a></div>
-				<div id="element"><a href="my_comments.php">Kommentare zu meinem Steckbrief</a></div>
-				<div id="element"><a href="upload.php">Bilder hochladen</a></div>
-				<div id="element"><a href="comment.php">Steckbriefe kommentieren</a></div>
-				<!--<div id="element"><a href="surveys.php">Umfragen</a></div>-->
-				<div id="element"><a href="students.php">Alle Schüler anzeigen</a></div>
+<?php 	$parent = substr($_SERVER["SCRIPT_NAME"],1); 
+	$array = array(
+		"index.php" => "Hauptseite",
+		"profile.php" => "Steckbrief bearbeiten",
+		"my_comments.php" => "Kommentare zu meinem Steckbrief",
+		"upload.php" => "Bilder hochladen",
+		"comment.php" => "Steckbriefe kommentieren",
+		# "surveys.php" => "Umfragen",
+		"students.php" => "Alle Schüler anzeigen",
+		);
+	foreach($array as $key => $value){
+		if($key == $parent){
+			echo '					<div id="element"><a href="' . $key . '"><em>' . $value . '</em></a></div>' . "\n";
+		}else{
+			echo '					<div id="element"><a href="' . $key . '">' . $value . '</a></div>' . "\n";
+		}
+	}
+?>
 			</div>

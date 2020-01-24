@@ -45,11 +45,11 @@ include "Templates/login.inc.php";
 			$question5 = $arr["question5"];
 
 			echo "<h3>Steckbrief von " . $_GET['name'] . "</h3>";
-			echo "<p>Mein persönlicher Boom: " . $arr["question1"] . "</p>";
-			echo "<p>In den \"Goldenen Zwanzigern\" möchte ich...: " . $arr["question2"] . "</p>";
-			echo "<p>Dieser Lehrer / diese Lehrerin verdient einen Gehaltsboom: " . $arr["question3"] . "</p>";
-			echo "<p>Dieses Fach bewahrte mich vor der Krise: " . $arr["question4"] . "</p>";
-			echo "<p>Meine Devise für die Krise: " . $arr["question5"] . "</p>";
+			echo "<p><b>Mein persönlicher Boom: </b>" . $arr["question1"] . "</p>";
+			echo "<p><b>In den \"Goldenen Zwanzigern\" möchte ich...: </b>" . $arr["question2"] . "</p>";
+			echo "<p><b>Dieser Lehrer / diese Lehrerin verdient einen Gehaltsboom: </b>" . $arr["question3"] . "</p>";
+			echo "<p><b>Dieses Fach bewahrte mich vor der Krise: </b>" . $arr["question4"] . "</p>";
+			echo "<p><b>Meine Devise für die Krise: </b>" . $arr["question5"] . "</p>";
 		}
 		echo    '<br><form action="save_comment.php" method="post">
 			Kommentar abgeben: 
@@ -64,7 +64,7 @@ include "Templates/login.inc.php";
 		$result = $ps->get_result();
 
 		if (mysqli_num_fields($result) > 0) {
-			echo "<br><h4>Kommentare:</h4>";
+			echo "<br><h3>Kommentare:</h3>";
 
 			while ($row = $result->fetch_assoc()) {
 				echo "<p>" .  $row["comment"] . "</p>";
