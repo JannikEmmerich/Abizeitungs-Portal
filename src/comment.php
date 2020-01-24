@@ -10,7 +10,19 @@ include "Templates/login.inc.php";
 	<h1>Neuen Kommentar verfassen</h1>
 	<form>
 		<em>Bitte gib den Namen der Person, deren Steckbrief Du kommentieren möchtest, ein:</em>
-		<input name="name" type="text">
+        <select name="name">
+            <?php
+
+            $ps = $mysqli->prepare("SELECT * FROM users");
+            $ps->execute();
+            $result = $ps->get_result();
+
+            while($row=$result->fetch_assoc()){
+                echo '<option>' . $row['username'] . '</option>';
+            }
+
+            ?>
+        </select>
 		<input type="submit">
 	</form>
 	<div id="display">

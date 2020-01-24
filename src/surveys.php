@@ -92,7 +92,6 @@ include "Templates/login.inc.php";
 			<option>verlässt die Klausur immer als erstes</option>
 			<option>landet unter die Brücke</option>
 			<option>größter Zuspätkommer</option>
-			<option>potentielle Zwillinge</option>
 			<option>größter Bauer</option>
 			<option>bestes Auto</option>
 			<option>größter Unterstufenschwarm</option>
@@ -111,6 +110,7 @@ include "Templates/login.inc.php";
 			<option>hat die meisten Körbe kassiert</option>
 			<option>wird Influencer</option>
 			<option>Alleinunterhalter</option>
+            <option>Erkennt man am Niesen</option>
 		</select>
 		<select name="value">
 		<?php
@@ -295,7 +295,6 @@ include "Templates/login.inc.php";
             <option>verlässt die Klausur immer als erstes</option>
             <option>landet unter die Brücke</option>
             <option>größter Zuspätkommer</option>
-            <option>potentielle Zwillinge</option>
             <option>größter Bauer</option>
             <option>bestes Auto</option>
             <option>größter Unterstufenschwarm</option>
@@ -314,6 +313,7 @@ include "Templates/login.inc.php";
             <option>hat die meisten Körbe kassiert</option>
             <option>wird Influencer</option>
             <option>Alleinunterhalter</option>
+            <option>Erkennt man am Niesen</option>
         </select>
         <input type="submit" value="Ergebnisse anzeigen">
     </form>
