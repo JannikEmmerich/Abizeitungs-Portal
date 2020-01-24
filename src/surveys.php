@@ -130,7 +130,7 @@ include "Templates/login.inc.php";
 			<option>mit...würde ich niemals auf Studienfahrt gehen</option>
 			<option>gibt zu viele Hausaufgaben</option>
 			<option>Klausuren haben nichts mit dem Unterricht zu tun</option>
-			<option>bester KLeidungsstil</option>
+			<option>bester KLeidungsstil - Lehrer</option>
 			<option>holzt den Regenwald ab</option>
 			<option>kann nicht diskutieren</option>
 			<option>hat am wenigsten Ahnung vom Fach</option>
@@ -139,7 +139,6 @@ include "Templates/login.inc.php";
 			<option>kommt immer zu spät</option>
 			<option>schwierigste Klausuren</option>
 			<option>leichteste Klausuren</option>
-			<option>potentielles Lehrerpaar</option>
 			<option>schweift am meisten vom Thema ab</option>
 			<option>schlechtester Farlehrer</option>
 			<option>bester Fahrlehrer</option>
@@ -165,7 +164,6 @@ include "Templates/login.inc.php";
 			<option>der Tafel bester Freund</option>
 			<option>der Beamer bester Freund</option>
 			<option>aufregendste Vergangenheit</option>
-			<option>größter Dummschwätzer</option>
 			<option>größter Angeber</option>
 			<option>Schülerliebling</option>
 			<option>größte Fachkompetenz</option>
@@ -178,13 +176,10 @@ include "Templates/login.inc.php";
 			<option>bester Unterricht</option>
 			<option>weicht am meisten vom Thema ab</option>
 			<option>immer gut gelaunt</option>
-			<option>bestes Schüler-Lehrer-Liebling</option>
-			<option>beliebtester Lehrer</option>
 			<option>größte Handyabnehmgefahr</option>
 			<option>würde man sogar außerhalb der Schule grüßen</option>
 			<option>größter Bizeps</option>
 			<option>versucht Unterricht zu vermeiden</option>
-			<option>übermotiviert</option>
 			<option>verknechtet seine Schüler</option>
 			<option>flog früher aus der Disco</option>
 			<option>bringt einem was für's Leben bei</option>
@@ -198,8 +193,6 @@ include "Templates/login.inc.php";
 			<option>24/7 gestresst</option>
 			<option>war/ist ein Frauenschwarm</option>
 			<option>war/ist ein Männerschwarm</option>
-			<option>verknechtet seine Schüler</option>
-			<option>flog früher aus der Disco</option>
 		</select>
 		<input type="text" name="value">
 		<input type="submit">
@@ -314,7 +307,7 @@ include "Templates/login.inc.php";
             <option>mit...würde ich niemals auf Studienfahrt gehen</option>
             <option>gibt zu viele Hausaufgaben</option>
             <option>Klausuren haben nichts mit dem Unterricht zu tun</option>
-            <option>bester KLeidungsstil</option>
+            <option>bester KLeidungsstil - Lehrer</option>
             <option>holzt den Regenwald ab</option>
             <option>kann nicht diskutieren</option>
             <option>hat am wenigsten Ahnung vom Fach</option>
@@ -323,7 +316,6 @@ include "Templates/login.inc.php";
             <option>kommt immer zu spät</option>
             <option>schwierigste Klausuren</option>
             <option>leichteste Klausuren</option>
-            <option>potentielles Lehrerpaar</option>
             <option>schweift am meisten vom Thema ab</option>
             <option>schlechtester Farlehrer</option>
             <option>bester Fahrlehrer</option>
@@ -349,7 +341,6 @@ include "Templates/login.inc.php";
             <option>der Tafel bester Freund</option>
             <option>der Beamer bester Freund</option>
             <option>aufregendste Vergangenheit</option>
-            <option>größter Dummschwätzer</option>
             <option>größter Angeber</option>
             <option>Schülerliebling</option>
             <option>größte Fachkompetenz</option>
@@ -362,13 +353,10 @@ include "Templates/login.inc.php";
             <option>bester Unterricht</option>
             <option>weicht am meisten vom Thema ab</option>
             <option>immer gut gelaunt</option>
-            <option>bestes Schüler-Lehrer-Liebling</option>
-            <option>beliebtester Lehrer</option>
             <option>größte Handyabnehmgefahr</option>
             <option>würde man sogar außerhalb der Schule grüßen</option>
             <option>größter Bizeps</option>
             <option>versucht Unterricht zu vermeiden</option>
-            <option>übermotiviert</option>
             <option>verknechtet seine Schüler</option>
             <option>flog früher aus der Disco</option>
             <option>bringt einem was für's Leben bei</option>
@@ -382,8 +370,6 @@ include "Templates/login.inc.php";
             <option>24/7 gestresst</option>
             <option>war/ist ein Frauenschwarm</option>
             <option>war/ist ein Männerschwarm</option>
-            <option>verknechtet seine Schüler</option>
-            <option>flog früher aus der Disco</option>
         </select>
         <input type="submit" value="Ergebnisse anzeigen">
     </form>
