@@ -27,3 +27,15 @@ $mysqli->query('CREATE TABLE IF NOT EXISTS surveys (
 	survey_key TEXT, 
 	survey_value TEXT
 	)');
+$mysqli->query('CREATE TABLE IF NOT EXISTS student_citations (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	userid INT,
+	author INT,
+	citation TEXT
+	)');
+$mysqli->query('CREATE TABLE IF NOT EXISTS teacher_citations (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	userid INT,
+	author INT,
+	citation TEXT
+	)');

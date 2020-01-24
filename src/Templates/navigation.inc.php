@@ -7,8 +7,9 @@
 		"upload.php" => "Bilder hochladen",
 		"comment.php" => "Steckbriefe kommentieren",
 		"surveys.php" => "Umfragen",
+		"citation.php" => "Zitate",
 		"students.php" => "Alle Schüler anzeigen",
-        "teachers.php" => "Alle Lehrer anzeigen",
+		"teachers.php" => "Alle Lehrer anzeigen",
 		);
 	foreach($array as $key => $value){
 		if($key == $parent){
