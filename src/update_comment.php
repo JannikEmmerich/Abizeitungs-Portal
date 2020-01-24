@@ -5,7 +5,7 @@ $cid = $_POST['comment_id'];
 $comment = $_POST['comment'];
 $name = $_POST['name'];
 
-$ps = $mysqli->prepare("SELECT id FROM comments WHERE id = ?");
+$ps = $mysqli->prepare("SELECT * FROM comments WHERE id = ?");
 $ps->bind_param("i", $cid);
 $ps->execute();
 $result = $ps->get_result();
@@ -13,6 +13,12 @@ $result = $ps->get_result();
 if (mysqli_num_rows($result) == 0) {
     header("Location: https://abizeitung.rubidium.ml/comment.php?name=" . $name);
 } else {
+    $row = $result->fetch_assoc();
+
+    if ($row['author'] != $user) {
+        die ("Keine Berechtigung!");
+    }
+
     $ps = $mysqli->prepare("UPDATE comments SET comment = ? WHERE id = ?");
     $ps->bind_param("si", $comment, $cid);
     $ps->execute();

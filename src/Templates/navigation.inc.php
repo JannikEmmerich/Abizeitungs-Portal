@@ -6,8 +6,9 @@
 		"my_comments.php" => "Kommentare zu meinem Steckbrief",
 		"upload.php" => "Bilder hochladen",
 		"comment.php" => "Steckbriefe kommentieren",
-		# "surveys.php" => "Umfragen",
+		"surveys.php" => "Umfragen",
 		"students.php" => "Alle Schüler anzeigen",
+        "teachers.php" => "Alle Lehrer anzeigen",
 		);
 	foreach($array as $key => $value){
 		if($key == $parent){

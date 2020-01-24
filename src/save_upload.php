@@ -44,7 +44,7 @@ if(file_exists($new_path)) { //Falls Datei existiert, hänge eine Zahl an den Da
 move_uploaded_file($_FILES[$state]['tmp_name'], $new_path);
 
 if ($extension == "png") {
-    header("Location: https://abizeitung.rubidium.ml/profile.php");
+    header("Location: https://abizeitung.rubidium.ml/upload.php");
 } else {
     $im = imagecreatefromjpeg($new_path);
 
@@ -54,5 +54,5 @@ if ($extension == "png") {
 
     imagepng($im, $new_path);
 
-    header("Location: https://abizeitung.rubidium.ml/profile.php");
+    header("Location: https://abizeitung.rubidium.ml/upload.php");
 }

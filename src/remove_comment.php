@@ -15,7 +15,7 @@ if( array_key_exists("name", $_POST) ){
 	$header = "Location: https://abizeitung.rubidium.ml/" . $src;
 }
 
-$ps = $mysqli->prepare("SELECT id FROM comments WHERE id = ?");
+$ps = $mysqli->prepare("SELECT * FROM comments WHERE id = ?");
 $ps->bind_param("i", $cid);
 $ps->execute();
 $result = $ps->get_result();
@@ -23,6 +23,13 @@ $result = $ps->get_result();
 if (mysqli_num_rows($result) == 0) {
     header($header);
 } else {
+    $row = $result->fetch_assoc();
+
+    if ($row['author'] != $user && $row['userid'] != $user) {
+        die ("Keine Berechtigung!");
+    }
+
+
     $ps = $mysqli->prepare("DELETE FROM comments WHERE id = ?");
     $ps->bind_param("i",  $cid);
     $ps->execute();

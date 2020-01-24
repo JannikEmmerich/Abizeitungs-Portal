@@ -11,7 +11,7 @@ html{font-family:Verdana,sans-serif}
 
 .space { margin-top: 350px; }
 
-body { background-position: center; background-repeat: no-repeat; background-size: cover; background-image:url('../Images/background.jpg') }
+body { background-position: center; background-repeat: no-repeat; background-size: cover; background-image:url('../background.jpg') }
 
 a { text-decoration: none; color: #2F5F5F; }
 a:visited { color: #2F4F4F; }
@@ -44,6 +44,10 @@ em { font-weight: bold; }
 #navigation #element {background: lightgrey; padding: 20px; margin: 2px; text-align: center}
 
 #footer {border: 0; padding: 0.4em; grid-column-start: 1; grid-column-end: span 2; grid-row-start: 2; grid-row-end: span 1; background-color: lightgrey;}
-  
+
+.error {
+	background-color: #ff3533;
+	color: white;
+}
 
 

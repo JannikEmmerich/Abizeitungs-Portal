@@ -7,7 +7,7 @@
 ?>
 			<div id="footer"> 
 				<a href="#top" style="float:left">top</a>
-				<div style="float:right">AbizeitungsPortal - <?php echo $arr['username']; ?></div>
+				<div style="float:right">Abizeitungs Portal von Jannik Emmerich und Benedikt Wolf - <?php echo $arr['username']; ?></div>
 			</div>
 		</div>
 	</body>
