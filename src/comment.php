@@ -84,12 +84,12 @@ include "Templates/login.inc.php";
 	if(mysqli_num_fields($result) > 0){
 		echo '<br><hr style="border: 2px solid darkgrey">';
 		echo '<p><h1>Du hast bereits folgende Kommentare abgegeben: </h1> 
-		Um einen Kommentar zu ändern, klick ihn an</p>';
+		Um einen Kommentar zu ändern, klick ihn an, du kannst ihn dann am Ende der Seite bearbeiten oder löschen.</p>';
 		while ($row = $result->fetch_assoc()) {
 			if( array_key_exists("comment_id", $_GET) && $row['id'] == $_GET['comment_id']){
 				echo '<b>';
 			}
-			echo '<a href="?comment_id=' . $row["id"] . '"><em>ID ' . $row["id"] . ':</em> ' .  $row["comment"] . ' zum Steckbrief von ' . $row["username"] . '</a>';
+			echo '<a href="?comment_id=' . $row["id"] . '"><em>ID ' . $row["id"] . ':</em> "' .  $row["comment"] . '" zum Steckbrief von ' . $row["username"] . '</a>';
 			if( array_key_exists("comment_id", $_GET) && $row['id'] == $_GET['comment_id']){
 				echo '</b>';
 			}
@@ -111,6 +111,7 @@ include "Templates/login.inc.php";
 			echo    '<form action="remove_comment.php" method="post">
 				Diesen Kommentar löschen (endgültig!)
 				<input name="comment_id" hidden="true" value="'. $_GET['comment_id'] . '">
+				<input name="src" hidden="true" value="comment.php">
 				<input name="name" hidden="true" value="'. $_GET['name'] . '">
 				<input type="submit" value="Löschen">
 			</form>';
