@@ -14,7 +14,7 @@ include "Templates/login.inc.php";
 	$result = $ps->get_result();
 
 	while ($row = $result->fetch_assoc()) {
-	echo '					<li>' . $row['username'] . '</li>' . "\n";
+	echo '					<li><a href="comment.php?name=' . $row["username"] . '">' . $row['username'] . '</a></li>' . "\n";
 	}
 ?>
 				</ol>
