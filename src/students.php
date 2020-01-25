@@ -7,7 +7,7 @@ include "Templates/login.inc.php";
 ?>
 			<div id="main">
 				<h2>Alle Schüler:</h2>
-				<ul>
+				<ul style="list-style-type: none;">
 <?php
 	$ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
 	$ps->execute();
