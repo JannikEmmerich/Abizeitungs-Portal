@@ -7,7 +7,7 @@ include "Templates/login.inc.php";
 ?>
 			<div id="main">
 				<h2>Alle Schüler:</h2>
-				<ol>
+				<ul>
 <?php
 	$ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
 	$ps->execute();
@@ -17,7 +17,7 @@ include "Templates/login.inc.php";
 	echo '					<li><a href="comment.php?name=' . $row["username"] . '">' . $row['username'] . '</a></li>' . "\n";
 	}
 ?>
-				</ol>
+</ul>
 			</div>
 <?php
 	include('Templates/navigation.inc.php');
