@@ -13,7 +13,7 @@ include "Templates/login.inc.php";
 	<form action="save_citation.php" method="post">
 		<select name="userid">
 			<?php
-				$ps = $mysqli->prepare("SELECT * FROM users");
+				$ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
 				$ps->execute();
 				$result = $ps->get_result();
 				
@@ -31,7 +31,7 @@ include "Templates/login.inc.php";
 	<form action="save_citation.php" method="post">
 		<select name="userid">
 			<?php
-				$ps = $mysqli->prepare("SELECT * FROM teachers");
+				$ps = $mysqli->prepare("SELECT * FROM teachers ORDER BY 2 ASC");
 				$ps->execute();
 				$result = $ps->get_result();
 				

@@ -112,19 +112,20 @@ include "Templates/login.inc.php";
 			<option>Alleinunterhalter</option>
             <option>Erkennt man am Niesen</option>
 		</select>
-		<select name="value">
-		<?php
-			
-				$ps = $mysqli->prepare("SELECT * FROM users");
-				$ps->execute();
-				$result = $ps->get_result();
-				
-				while($row=$result->fetch_assoc()){
-					echo '<option>' . $row['username'] . '</option>';
-				}
-			
-		?>
-		</select>
+        <input name="value" list="namelist" autocomplete="off">
+        <datalist id="namelist">
+            <?php
+
+            $ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
+            $ps->execute();
+            $result = $ps->get_result();
+
+            while($row=$result->fetch_assoc()){
+                echo '<option>' . $row['username'] . '</option>';
+            }
+
+            ?>
+        </datalist>
 		<input type="submit">
 	</form>
 
@@ -204,19 +205,20 @@ include "Templates/login.inc.php";
 			<option>war/ist ein Frauenschwarm</option>
 			<option>war/ist ein Männerschwarm</option>
 		</select>
-		<select name="value">
-		<?php
-			
-				$ps = $mysqli->prepare("SELECT * FROM teachers");
-				$ps->execute();
-				$result = $ps->get_result();
-				
-				while($row=$result->fetch_assoc()){
-					echo '<option>' . $row['username'] . '</option>';
-				}
-			
-		?>
-		</select>
+        <input name="value" list="teacherslist" autocomplete="off">
+        <datalist id="teacherslist">
+            <?php
+
+            $ps = $mysqli->prepare("SELECT * FROM teachers ORDER BY 2 ASC");
+            $ps->execute();
+            $result = $ps->get_result();
+
+            while($row=$result->fetch_assoc()){
+                echo '<option>' . $row['username'] . '</option>';
+            }
+
+            ?>
+        </datalist>
 		<input type="submit">
 	</form>
 
