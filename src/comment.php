@@ -10,7 +10,7 @@ include "Templates/login.inc.php";
 	<h1>Neuen Kommentar verfassen</h1>
 	<form>
 		<em>Bitte gib den Namen der Person, deren Steckbrief Du kommentieren möchtest, ein:</em>
-        <input name="name" list="namelist">
+        <input name="name" list="namelist" autocomplete="off">
 				<datalist id="namelist">
             <?php
 
