@@ -14,7 +14,7 @@ include "Templates/login.inc.php";
 				<datalist id="namelist">
             <?php
 
-            $ps = $mysqli->prepare("SELECT * FROM users ORDER BY 1 ASC");
+            $ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
             $ps->execute();
             $result = $ps->get_result();
 

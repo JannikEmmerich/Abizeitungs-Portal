@@ -9,7 +9,7 @@ include "Templates/login.inc.php";
 				<h2>Alle Schüler:</h2>
 				<ol>
 <?php
-	$ps = $mysqli->prepare("SELECT * FROM users");
+	$ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
 	$ps->execute();
 	$result = $ps->get_result();
 
@@ -19,7 +19,7 @@ include "Templates/login.inc.php";
 ?>
 				</ol>
 			</div>
-<?php 
-	include('Templates/navigation.inc.php');  
-	include('Templates/footer.inc.php'); 
+<?php
+	include('Templates/navigation.inc.php');
+	include('Templates/footer.inc.php');
 ?>
