@@ -1,5 +1,5 @@
 			<div id="navigation">
-<?php 	$parent = substr($_SERVER["SCRIPT_NAME"],1); 
+<?php 	$parent = substr($_SERVER["SCRIPT_NAME"],1);
 	$array = array(
 		"index.php" => "Hauptseite",
 		"profile.php" => "Steckbrief bearbeiten",
@@ -15,7 +15,7 @@
 		if($key == $parent){
 			echo '					<div id="element"><a href="' . $key . '"><em>' . $value . '</em></a></div>' . "\n";
 		}else{
-			echo '					<div id="element"><a href="' . $key . '">' . $value . '</a></div>' . "\n";
+			echo '					<a href="' . $key . '"><div id="element">' . $value . '</div></a>' . "\n";
 		}
 	}
 ?>

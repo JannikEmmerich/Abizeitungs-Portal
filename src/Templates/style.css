@@ -5,7 +5,7 @@ html{font-family:Verdana,sans-serif}
   display: grid;
   grid-template-columns: auto 250px;
   grid-gap: 25px;
-  grid-template-rows: auto 35px; 
+  grid-template-rows: auto 35px;
   align-content: start;
 }
 
@@ -18,15 +18,15 @@ a:visited { color: #2F4F4F; }
 
 em { font-weight: bold; }
 
-#header{ 	left: 0px; 
-		right: 0px; 
+#header{ 	left: 0px;
+		right: 0px;
 		background:lightgrey;
 		position:fixed;
-		top:0px; 
-		width: auto; 
-		display: grid; 
-		grid-template-columns: 300px auto; 
-		grid-template-rows: auto; 
+		top:0px;
+		width: auto;
+		display: grid;
+		grid-template-columns: 300px auto;
+		grid-template-rows: auto;
 		grid-gap: 50px;
 		align-content: start;
 		padding:20px;
@@ -42,6 +42,7 @@ em { font-weight: bold; }
 
 #navigation { grid-row-start: 1; grid-row-end: span 1; grid-column-start: 2; grid-column-end: span 1}
 #navigation #element {background: lightgrey; padding: 20px; margin: 2px; text-align: center}
+#navigation #element:hover {background-color: darkgrey}
 
 #footer {border: 0; padding: 0.4em; grid-column-start: 1; grid-column-end: span 2; grid-row-start: 2; grid-row-end: span 1; background-color: lightgrey;}
 
@@ -49,5 +50,3 @@ em { font-weight: bold; }
 	background-color: #ff3533;
 	color: white;
 }
-
-

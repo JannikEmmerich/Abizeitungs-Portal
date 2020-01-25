@@ -7,19 +7,19 @@ include "Templates/login.inc.php";
 ?>
 			<div id="main">
 				<h2>Alle Schüler:</h2>
-				<ol>
+				<ul style="list-style-type: none;">
 <?php
-	$ps = $mysqli->prepare("SELECT * FROM users");
+	$ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
 	$ps->execute();
 	$result = $ps->get_result();
 
 	while ($row = $result->fetch_assoc()) {
-	echo '					<li>' . $row['username'] . '</li>' . "\n";
+	echo '					<li><a href="comment.php?name=' . $row["username"] . '">' . $row['username'] . '</a></li>' . "\n";
 	}
 ?>
-				</ol>
+</ul>
 			</div>
-<?php 
-	include('Templates/navigation.inc.php');  
-	include('Templates/footer.inc.php'); 
+<?php
+	include('Templates/navigation.inc.php');
+	include('Templates/footer.inc.php');
 ?>

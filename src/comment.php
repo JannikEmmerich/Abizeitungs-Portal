@@ -10,10 +10,11 @@ include "Templates/login.inc.php";
 	<h1>Neuen Kommentar verfassen</h1>
 	<form>
 		<em>Bitte gib den Namen der Person, deren Steckbrief Du kommentieren möchtest, ein:</em>
-        <select name="name">
+        <input name="name" list="namelist" autocomplete="off">
+				<datalist id="namelist">
             <?php
 
-            $ps = $mysqli->prepare("SELECT * FROM users");
+            $ps = $mysqli->prepare("SELECT * FROM users ORDER BY 2 ASC");
             $ps->execute();
             $result = $ps->get_result();
 
@@ -22,7 +23,7 @@ include "Templates/login.inc.php";
             }
 
             ?>
-        </select>
+        </datalist>
 		<input type="submit">
 	</form>
 	<div id="display">
@@ -64,7 +65,7 @@ include "Templates/login.inc.php";
 			echo "<p><b>Meine Devise für die Krise: </b>" . $arr["question5"] . "</p>";
 		}
 		echo    '<br><form action="save_comment.php" method="post">
-			Kommentar abgeben: 
+			Kommentar abgeben:
 			<input name="comment" type="text">
 			<input name="name" hidden="true" value="'. $_GET['name'] . '">
 			<input type="submit">
@@ -82,7 +83,7 @@ include "Templates/login.inc.php";
 				echo "<p>" .  $row["comment"] . "</p>";
 			}
 		}
-		
+
 		}
 	}
 	?>
@@ -92,10 +93,10 @@ include "Templates/login.inc.php";
 	$ps->bind_param("i", $user);
 	$ps->execute();
 	$result = $ps->get_result();
-	
+
 	if(mysqli_num_fields($result) > 0){
 		echo '<br><hr style="border: 2px solid darkgrey">';
-		echo '<p><h1>Du hast bereits folgende Kommentare abgegeben: </h1> 
+		echo '<p><h1>Du hast bereits folgende Kommentare abgegeben: </h1>
 		Um einen Kommentar zu ändern, klick ihn an, du kannst ihn dann am Ende der Seite bearbeiten oder löschen.</p>';
 		while ($row = $result->fetch_assoc()) {
 			if( array_key_exists("comment_id", $_GET) && $row['id'] == $_GET['comment_id']){
@@ -131,8 +132,8 @@ include "Templates/login.inc.php";
 	}
 	?>
 </div>
-	
-<?php 
-	include('Templates/navigation.inc.php');  
-	include('Templates/footer.inc.php'); 
+
+<?php
+	include('Templates/navigation.inc.php');
+	include('Templates/footer.inc.php');
 ?>
