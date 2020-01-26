@@ -22,7 +22,10 @@ include "Templates/login.inc.php";
 				}
 			?>
 		</select>
-		<input type="text" name="citation" size="70">
+        <br>
+        <br>
+        <textarea name="citation" cols="35" rows="5"></textarea>
+        <br>
 		<input type="hidden" name="type" value="student">
 		<input type="hidden" name="act" value="INSERT">
 		<input type="submit">
@@ -40,7 +43,10 @@ include "Templates/login.inc.php";
 				}
 			?>
 		</select>
-		<input type="text" name="citation" size="70">
+        <br>
+        <br>
+        <textarea name="citation" cols="35" rows="5"></textarea>
+        <br>
 		<input type="hidden" name="type" value="teacher">
 		<input type="hidden" name="act" value="INSERT">
 		<input type="submit">
