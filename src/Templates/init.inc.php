@@ -39,3 +39,8 @@ $mysqli->query('CREATE TABLE IF NOT EXISTS teacher_citations (
 	author INT,
 	citation TEXT
 	)');
+$mysqli->query('CREATE TABLE IF NOT EXISTS trueornot (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	author INT,
+	text TEXT
+	)');

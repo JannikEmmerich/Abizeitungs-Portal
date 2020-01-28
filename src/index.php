@@ -17,7 +17,8 @@
 		"upload.php" => "Bilder hochladen",
 		"comment.php" => "Steckbriefe kommentieren",
 		"surveys.php" => "Umfragen",
-		"citation.php" => "Zitate",
+		"citation.php" => 'Zitate und "Stimmt es, dass...?"',
+		"all_citations.php" => "Alle Zitate anzeigen",
 		"students.php" => "Alle Schüler anzeigen",
 		"teachers.php" => "Alle Lehrer anzeigen",
 	);

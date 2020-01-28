@@ -1,6 +1,6 @@
 <?php
 
-    $mysqli = mysqli_connect('172.19.0.5', 'abizeitung','abizeitung','abizeitung');
+    $mysqli = mysqli_connect('172.18.0.2', 'abizeitung','abizeitung','abizeitung');
 
     mysqli_set_charset($mysqli, "utf8");
 
