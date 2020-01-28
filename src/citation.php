@@ -53,9 +53,7 @@ include "Templates/login.inc.php";
 	</form>
 	<h4>Stimmt es, dass...?</h4>
 	<form action="save_ton.php" method="post">
-		Stimmt es, dass 
-		<input type="text" name="text" size="100">
-		?
+		Stimmt es, dass <input type="text" name="text" size="100">?
 		<input type="hidden" name="act" value="INSERT">
 		<input type="submit">
 	</form>
@@ -93,7 +91,7 @@ include "Templates/login.inc.php";
 			}
 		}
 		echo '<b> - Lehrerzitate - </b><br>';
-		$ps = $mysqli->prepare("SELECT tc.id, tc.citation, t.username FROM teacher_citations tc, teachers t WHERE author = ? AND tc.userid=t.id");
+		$ps = $mysqli->prepare("SELECT DISTINCT tc.id, tc.citation, t.username FROM teacher_citations tc, teachers t WHERE author = ? AND tc.userid=t.id");
 		$ps->bind_param("i", $user);
 		$ps->execute();
 		$result = $ps->get_result();
@@ -117,7 +115,7 @@ include "Templates/login.inc.php";
 				echo '<b>';
 				$text_cache = $row["text"];
 			}
-			echo '<a href="?selected_ton=' . $row["id"] . '">Stimmt es, dass <em>' . $row["text"] . '</em>?</a><br>' . "\n";
+			echo '<a href="?selected_ton=' . $row["id"] . '">Stimmt es, dass <i>' . $row["text"] . '</i>?</a><br>' . "\n";
 			if( $type == "ton" && $use == $row["id"]){
 				echo '</b>';
 			}
@@ -144,8 +142,8 @@ include "Templates/login.inc.php";
 			} else if ($type == "ton"){
 				echo '<br><br><hr style="border: 2px solid lightgrey">';
 				echo    '<form action="save_ton.php" method="post">
-					Ändern
-					<input name="text" type="text" size="55" value="'. $text_cache . '">
+					<b>Ändern:</b>
+					Stimmt es, dass <input name="text" type="text" size="55" value="'. $text_cache . '">?
 					<input name="ton_id" hidden="true" value="'. $use . '">
 					<input type="hidden" name="act" value="UPDATE">
 					<input type="hidden" name="type" value="' . $type . '">
