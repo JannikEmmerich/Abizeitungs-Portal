@@ -14,6 +14,11 @@ include "Templates/login.inc.php";
             echo '<p>Der eingegebene Schüler / Lehrer existiert nicht!</p>';
             echo '</div>';
         }
+    if (array_key_exists("successfully_saved", $_GET)) {
+        echo '<div class="success">';
+        echo '<p>Erfolgreich abgespeichert!</p>';
+        echo '</div>';
+    }
     ?>
 
 	<p><em>Wenn du bereits an einer Umfrage teilgenommen hast, kannst du durch eine erneute Teilnahme deine alte überschreiben!</em></p>
@@ -221,6 +226,21 @@ include "Templates/login.inc.php";
 		</datalist>
 		<input type="submit">
 	</form>
+
+    <br>
+
+    <h3>Pärchenumfragen:</h3>
+
+    <form action="save_umfragen.php" method="post">
+        <input type="hidden" value="pair" name="type">
+        <select name="survey">
+            <option>Potentielles Pärchen - Schüler</option>
+            <option>Süßestes Stufenpärchen</option>
+            <option>Potentielles Pärchen - Lehrer</option>
+        </select>
+        <input name="value" type="text">
+        <input type="submit">
+    </form>
 
 	<br>
 

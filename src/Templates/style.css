@@ -50,3 +50,8 @@ em { font-weight: bold; }
 	background-color: #ff3533;
 	color: white;
 }
+
+.error {
+	background-color: lawngreen;
+	color: black;
+}

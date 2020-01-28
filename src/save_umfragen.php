@@ -10,6 +10,16 @@ if ($type == "student") {
     $ps = $mysqli->prepare("SELECT id FROM users where username = ?");
 } else if ($type == "teacher") {
     $ps = $mysqli->prepare("SELECT id FROM teachers where username = ?");
+} else if ($type == "pair") {
+    if ($survey != "Potentielles Pärchen - Schüler" && $survey != "Potentielles Pärchen - Lehrer" && $survey != "Süßestes Stufenpärchen") {
+        die ("Error, bitte kontaktiere die Entwickler!");
+    }
+    $ps = $mysqli->prepare("INSERT INTO surveys (userid, survey_key, survey_value) VALUES(?, ?, ?)");
+    $ps->bind_param("iss", $user, $survey, $value);
+    $ps->execute();
+
+    header("Location: https://abizeitung.rubidium.ml/surveys.php?successfully_saved=1");
+    exit;
 } else {
     die ("Error, bitte kontaktiere die Entwickler!");
 }
