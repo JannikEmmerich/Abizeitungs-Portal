@@ -36,25 +36,6 @@ if(mysqli_num_fields($result) > 0) {
 
 ?>
 
-<table style="border: 0px" cellpadding="5">
-	<colgroup>
-		<col width="50%"/>
-		<col width="50%"/>
-	</colgroup>
-	<tr><th>Aktuelles Bild:</th><th>Altes Bild:</th></tr>
-	<tr>
-		<td>
-			<img alt="Du hast noch kein aktuelles Bild hochgeladen!" width=400px src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_current.png")); ?>'>
-		</td>
-		<td>
-			<img alt="Du hast noch kein altes Bild hochgeladen!" width=400px src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_old.png")); ?>'>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"><em>Du kannst die Bilder unter <a href="upload.php">diesem Link</a> ändern oder über die Navigation rechts</em></td>
-	</tr>
-</table>
-<br>
 
 <form action="save_profile.php" method="post">
     Geburtsdatum:
