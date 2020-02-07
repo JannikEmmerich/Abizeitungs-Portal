@@ -23,14 +23,28 @@ include "Templates/login.inc.php";
 							<img 
 								alt="Du hast noch kein aktuelles Bild hochgeladen!" 
 								width=400px 
-								src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_current.png")); ?>'
+								src='data:image/png;base64,<?php
+                                $img = imagescale(imagecreatefromstring(file_get_contents("Images/" . $user . "_current.png")), 400);
+                                ob_start(); // Let's start output buffering.
+                                imagejpeg($img); //This will normally output the image, but because of ob_start(), it won't.
+                                $contents = ob_get_contents(); //Instead, output above is saved to $contents
+                                ob_end_clean(); //End the output buffer.
+                                echo base64_encode($contents);
+                                ?>'
 							>
 						</td>
 						<td>
 							<img 
 								alt="Du hast noch kein altes Bild hochgeladen!" 
 								width=400px 
-								src='data:image/png;base64,<?php echo base64_encode(file_get_contents("Images/" . $user . "_old.png")); ?>'
+								src='data:image/png;base64,<?php
+                                $img = imagescale(imagecreatefromstring(file_get_contents("Images/" . $user . "_old.png")), 400);
+                                ob_start(); // Let's start output buffering.
+                                imagejpeg($img); //This will normally output the image, but because of ob_start(), it won't.
+                                $contents = ob_get_contents(); //Instead, output above is saved to $contents
+                                ob_end_clean(); //End the output buffer.
+                                echo base64_encode($contents);
+                                ?>'
 							>
 						</td>
 					</tr>

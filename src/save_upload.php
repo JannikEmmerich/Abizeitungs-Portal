@@ -34,21 +34,22 @@ if(function_exists('exif_imagetype')) { //Die exif_imagetype-Funktion erfordert 
 }
 
 //Pfad zum Upload
-$new_path = $upload_folder.$filename.'.'.$extension;
+$new_path = $upload_folder.$filename.'.';
+
 
 //Neuer Dateiname falls die Datei bereits existiert
-if(file_exists($new_path)) { //Falls Datei existiert, hänge eine Zahl an den Dateinamen
-   unlink($new_path);
+if(file_exists($new_path.'png')) { //Falls Datei existiert, hänge eine Zahl an den Dateinamen
+   unlink($new_path.'png');
 }
 
-move_uploaded_file($_FILES[$state]['tmp_name'], $new_path);
+move_uploaded_file($_FILES[$state]['tmp_name'], $new_path.$extension);
 
 if ($extension == "png") {
     header("Location: https://abizeitung.rubidium.ml/upload.php");
 } else {
-    $im = imagecreatefromjpeg($new_path);
+    $im = imagecreatefromjpeg($new_path.$extension);
 
-    unlink($new_path);
+    unlink($new_path.$extension);
 
     $new_path = $upload_folder . $filename . '.png';
 
